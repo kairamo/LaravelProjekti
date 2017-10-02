@@ -12,6 +12,8 @@ class ravintolatController extends Controller
 
 		$ravintolat = DB::table('ravintolat')->get();
 
+
+
 		return view('welcome', compact('ravintolat'));
 
 	}
