@@ -27,6 +27,24 @@ class ravintolatController extends Controller
 
 	}
 
+    public function searchByName($ravintola)
+    {
+
+        $ravintola = DB::table('ravintolat')->where('ravintola', $ravintola)->get();
+
+        dd($ravintola);
+
+    }
+
+    public function searchByLocation($paikka)
+    {
+
+        $paikka = DB::table('ravintolat')->where('kaupunki', $paikka)->get();
+
+        dd($paikka);
+
+    }
+
 	public function showAll()
 	{
 		
