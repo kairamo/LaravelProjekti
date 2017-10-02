@@ -21,6 +21,13 @@
                 margin: 0;
             }
 
+            p {
+                color: #636b6f;
+                /*padding: 0 25px;*/
+                font-size: 20px;
+                font-weight: bold;
+            }
+
             .full-height {
                 height: 100vh;
             }
@@ -60,7 +67,7 @@
             }
 
             .m-b-md {
-                margin-bottom: 30px;
+                margin-bottom: 50px;
             }
         </style>
     </head>
@@ -79,16 +86,19 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel Jeejeeejoujou
+                    Ravintolat
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                    @foreach ( $ravintolat as $ravintola )
+                        
+                        <div class="links">
+                            <p> {{ $ravintola -> ravintola }} </p>
+                            <p> {{ $ravintola -> paikka }} </p>
+                            <a  href=" {{ $ravintola -> url }} "> {{ $ravintola -> url }} </a>
+                        </div>
+                        <hr>
+
+                    @endforeach
             </div>
         </div>
     </body>
