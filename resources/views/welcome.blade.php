@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -130,7 +132,7 @@
                 <input type="text" class="form-control" id="url" name="url">
               </div>
               <div class="form-group">
-                <label for="formGroupExampleInput2">Arvostele</label>
+                <label for="formGroupExampleInput2">Arvostele (1-5)</label>
                 <input type="text" class="form-control" id="tahdet" name="tahdet">
               </div>
                 <button class="button button5">Lähetä</button>
@@ -147,8 +149,16 @@
                     </div>
                 </form>
 
+                <div id="results">
+                    @yield ('content')
 
-                               @foreach ( $ravintolat as $ravintola )
+
+
+
+                </div>
+
+
+                          <!--     @foreach ( $ravintolat as $ravintola )
                         
                         <div class="links">
                             <p> {{ $ravintola -> ravintola }} </p>
@@ -165,9 +175,13 @@
                         </div>
                         <hr>
 
-                    @endforeach
+                    @endforeach-->
 
             </div>
         </div>
     </body>
+
+<script>
+
+</script>
 </html>
