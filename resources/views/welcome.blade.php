@@ -34,7 +34,7 @@
             }
 
             .full-height {
-                height: 100vh;
+                /*height: 100vh;*/
             }
 
             .flex-center {
@@ -72,29 +72,83 @@
             }
 
             .m-b-md {
-                margin-bottom: 100px;
-                margin-top: 300px;
+                margin-bottom: 20%;
+                margin-top: 10%;
 
             }
+
+            .button {
+                background-color: #4CAF50; /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 3px;
+                font-weight: bold;
+                /*font-family: 'Raleway', sans-serif;*/
+
+            }
+            .button5 {background-color: #555555;} /* Black */
+
         </style>
     </head>
     <body>
+
         <div class="flex-center position-ref full-height">
 
+
             <div class="content">
+
                 <div class="title m-b-md">
                     Ravintolat
                 </div>
 
+            <form method="POST" action="/posts" 
+                style="margin-top: 10px; padding: 20px; border: solid #D3D3D3 1px; border-radius: 5px; box-shadow: 5px 5px 5px #d1d1d1;">
+              
+              {{ csrf_field() }}
+
+              <div class="form-group">
+                <label for="formGroupExampleInput" style="">Ravintola</label>
+                <input type="text" class="form-control" id="ravintola" name="ravintola">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Kaupunki</label>
+                <input type="text" class="form-control" id="kaupunki" name="kaupunki">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Katuosoite</label>
+                <input type="text" class="form-control" id="osoite" name="osoite">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Kotisivut</label>
+                <input type="text" class="form-control" id="url" name="url">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Arvostele</label>
+                <input type="text" class="form-control" id="tahdet" name="tahdet">
+              </div>
+                <button class="button button5">Lähetä</button>
+            </form>
+
+            <hr>
+
                 <form>
-                    <div class="form-group" style="margin-bottom: 50px">
-                        <!-- <label for="exampleInputEmail1">Email address</label> -->
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Esim. Helsinki">
+                    <div class="form-group" style="" method="GET" action="/show" >
+                        <input type="text" class="form-control" id="kaupunki" name="kaupunki" placeholder="Esim. Helsinki">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <button class="button button5">Hae</button>
+
                     </div>
                 </form>
 
-                    @foreach ( $ravintolat as $ravintola )
+
+                               @foreach ( $ravintolat as $ravintola )
                         
                         <div class="links">
                             <p> {{ $ravintola -> ravintola }} </p>
@@ -103,7 +157,7 @@
                             <p>
                                 <span class="glyphicon glyphicon-star-empty"></span>
                                 
-                                {{ number_format($ravintola -> tahdetlkm / $ravintola -> tahdet, 1) }} / 5 
+                                {{ number_format( $ravintola->tahdet / $ravintola->tahdetlkm , 1) }} / 5 
                                 
                             </p>
 
@@ -112,6 +166,7 @@
                         <hr>
 
                     @endforeach
+
             </div>
         </div>
     </body>
