@@ -59,11 +59,12 @@ class ravintolatController extends Controller
 		return view('welcome');
 		
 	}
-	public function printRestaurants($kaupunki) {
+
+	public function printRestaurants() { // 
 
 
 		#$ravintolat = DB::table('ravintolat')->get();
-        $ravintolat = DB::table('ravintolat')->where('kaupunki', 'Helsinki')->get();
+        $ravintolat = DB::table('ravintolat')->where('kaupunki', request('kaupunki'))->get();
 
 		return view('show', compact('ravintolat'));
 

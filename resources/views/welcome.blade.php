@@ -142,7 +142,7 @@
                 </script>
 
             <hr>
-                <form method="GET" action="/haku">
+                <form method="GET" action="/haku={kaupunki}">
 
                     <div class="form-group" style=""  >
                         <input type="text" class="form-control" id="kaupunki" name="kaupunki" placeholder="Esim. Helsinki">
@@ -152,18 +152,8 @@
                     </div>
                 </form>
             </hr>
-
-
-                <div id="results">
-                    @yield ('content')
-
-
-
-
-                </div>
-
-
-
+            
+            @yield ('content')
 
             </div>
         </div>

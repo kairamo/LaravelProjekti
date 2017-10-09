@@ -2,6 +2,8 @@
 
 Route::get('/', 'ravintolatController@index');   // ravintolatController@printRestaurants
 
+Route::get('/', 'ravintolatController@index');   // ravintolatController@printRestaurants
+
 Route::get('id={id}', 'ravintolatController@searchById');
 
 Route::get('/all', 'ravintolatController@showAll');
@@ -16,7 +18,7 @@ Route::post('/find', 'ravintolatController@findFromTable');
 
 Route::get('/show', 'ravintolatController@showByCity');
 
-Route::get('/haku', 'ravintolatController@printRestaurants');
+Route::get('/haku={kaupunki}', 'ravintolatController@printRestaurants');
 
 
 
