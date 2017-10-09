@@ -82,7 +82,7 @@ class ravintolatController extends Controller
 
 		$ravintola = DB::table('ravintolat')->find($id);
 
-		dd($ravintola);
+		return $ravintola;
 
 	}
 
@@ -91,7 +91,7 @@ class ravintolatController extends Controller
 
         $ravintola = DB::table('ravintolat')->where('ravintola', $ravintola)->get();
 
-        dd($ravintola);
+        return $ravintola;
 
     }
 
@@ -100,7 +100,7 @@ class ravintolatController extends Controller
 
         $paikka = DB::table('ravintolat')->where('kaupunki', $paikka)->get();
 
-        dd($paikka);
+        return $paikka;
 
     }
 
