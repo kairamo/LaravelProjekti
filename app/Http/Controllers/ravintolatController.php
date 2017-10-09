@@ -29,7 +29,18 @@ class ravintolatController extends Controller
 	}
 
 	public function addToTable() {
-
+		$results = DB::select('select * from ravintolat where osoite = ?', array(request('osoite')));
+		$tahdet = request('tahdet');
+		if($results)
+			
+			DB::table('ravintolat')
+            ->where('osoite', request('osoite'))
+			->update([
+			'tahdet' => DB::raw("tahdet + '$tahdet'"),
+			'tahdetlkm' => DB::raw('tahdetlkm + 1'),
+			 ]);
+            
+		else{
 		$ravintolaArvostelu = new Ravintola;
 
 		$ravintolaArvostelu->ravintola = request('ravintola');
@@ -45,7 +56,7 @@ class ravintolatController extends Controller
 		$ravintolaArvostelu->tahdetlkm += 1;		
 
 		$ravintolaArvostelu->save();
-
+		}
 		return redirect('/');
 	}
 
