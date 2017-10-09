@@ -54,6 +54,11 @@ class ravintolatController extends Controller
 		return view('welcome', "<h1>MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM</h1>");
 	}
 
+	public function index() {}
+	{
+		return view('welcome');
+		
+	}
 	public function printRestaurants() {
 
 		$ravintolat = DB::table('ravintolat')->get();
