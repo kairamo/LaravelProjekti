@@ -16,6 +16,8 @@ Route::post('/find', 'ravintolatController@findFromTable');
 
 Route::get('/show', 'ravintolatController@showByCity');
 
+Route::get('/haku', 'ravintolatController@printRestaurants');
+
 
 
 

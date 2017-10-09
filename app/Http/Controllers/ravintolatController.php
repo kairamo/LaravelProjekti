@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request as request;
 use App\Ravintola;
 
 class ravintolatController extends Controller
@@ -54,14 +54,16 @@ class ravintolatController extends Controller
 		return view('welcome', "<h1>MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM</h1>");
 	}
 
-	public function index() {}
+	public function index()
 	{
 		return view('welcome');
 		
 	}
-	public function printRestaurants() {
+	public function printRestaurants($kaupunki) {
 
-		$ravintolat = DB::table('ravintolat')->get();
+
+		#$ravintolat = DB::table('ravintolat')->get();
+        $ravintolat = DB::table('ravintolat')->where('kaupunki', 'Helsinki')->get();
 
 		return view('show', compact('ravintolat'));
 

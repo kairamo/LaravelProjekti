@@ -137,24 +137,23 @@
               </div>
                 <button class="button button5">Lähetä</button>
             </form>
+                <script>
+
+                </script>
 
             <hr>
-                <form>
-                    <div class="form-group" style="" method="GET" action="/show" >
+                <form method="GET" action="/haku">
+
+                    <div class="form-group" style=""  >
                         <input type="text" class="form-control" id="kaupunki" name="kaupunki" placeholder="Esim. Helsinki">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        <button class="button button5">Hae</button>
+                        <button class="button button5" >Hae</button>
 
                     </div>
                 </form>
             </hr>
 
-<<<<<<< HEAD
-            
-                <!-- @yield('showRestaurants') -->
-<!-- 
-                    @foreach ( $ravintolat as $ravintola )
-=======
+
                 <div id="results">
                     @yield ('content')
 
@@ -164,29 +163,7 @@
                 </div>
 
 
-                          <!--     @foreach ( $ravintolat as $ravintola )
->>>>>>> d378fa34b9b8eb2dcf8f66375c8e9d53081f90cd
-                        
-                        <div class="links">
-                            <p> {{ $ravintola -> ravintola }} </p>
-                            <p> {{ $ravintola -> kaupunki }} </p>
-                            
-                            <p>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                                
-                                {{ number_format( $ravintola->tahdet / $ravintola->tahdetlkm , 1) }} / 5 
-                                
-                            </p>
 
-                            <a  href=" {{ $ravintola -> url }} "> {{ $ravintola -> url }} </a>
-                        </div>
-                        <hr>
-
-<<<<<<< HEAD
-                    @endforeach -->
-=======
-                    @endforeach-->
->>>>>>> d378fa34b9b8eb2dcf8f66375c8e9d53081f90cd
 
             </div>
         </div>
