@@ -137,7 +137,6 @@
             </form>
 
             <hr>
-
                 <form>
                     <div class="form-group" style="" method="GET" action="/show" >
                         <input type="text" class="form-control" id="kaupunki" name="kaupunki" placeholder="Esim. Helsinki">
@@ -146,9 +145,12 @@
 
                     </div>
                 </form>
+            </hr>
 
-
-                               @foreach ( $ravintolat as $ravintola )
+            
+                <!-- @yield('showRestaurants') -->
+<!-- 
+                    @foreach ( $ravintolat as $ravintola )
                         
                         <div class="links">
                             <p> {{ $ravintola -> ravintola }} </p>
@@ -165,7 +167,7 @@
                         </div>
                         <hr>
 
-                    @endforeach
+                    @endforeach -->
 
             </div>
         </div>
