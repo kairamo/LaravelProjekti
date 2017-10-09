@@ -2,7 +2,7 @@
 
 Route::get('/', 'ravintolatController@index');   // ravintolatController@printRestaurants
 
-Route::get('/', 'ravintolatController@index');   // ravintolatController@printRestaurants
+
 
 Route::get('id={id}', 'ravintolatController@searchById');
 

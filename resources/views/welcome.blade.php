@@ -110,7 +110,7 @@
                     Ravintolat
                 </div>
 
-            <form method="POST" action="/posts" 
+            <form method="POST" action="/LaravelProjekti/public/posts"
                 style="margin-top: 10px; padding: 20px; border: solid #D3D3D3 1px; border-radius: 5px; box-shadow: 5px 5px 5px #d1d1d1;">
               
               {{ csrf_field() }}
@@ -142,7 +142,7 @@
                 </script>
 
             <hr>
-                <form method="GET" action="/haku={kaupunki}">
+                <form method="GET" action="/LaravelProjekti/public/haku={kaupunki}">
 
                     <div class="form-group" style=""  >
                         <input type="text" class="form-control" id="kaupunki" name="kaupunki" placeholder="Esim. Helsinki">

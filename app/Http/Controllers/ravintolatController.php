@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request as request;
+use Illuminate\Http\Request;
 use App\Ravintola;
 
 class ravintolatController extends Controller
@@ -64,7 +64,14 @@ class ravintolatController extends Controller
 
 
 		#$ravintolat = DB::table('ravintolat')->get();
-        $ravintolat = DB::table('ravintolat')->where('kaupunki', request('kaupunki'))->get();
+        $ravintolat = DB::table('ravintolat')
+                                            ->where('ravintola', request('kaupunki'))
+                                            ->orWhere('kaupunki', request('kaupunki'))
+                                            ->get();
+
+
+
+
 
 		return view('show', compact('ravintolat'));
 
